@@ -8,5 +8,19 @@ namespace Labb2_ConsolePong
 {
     internal class Paddle
     {
+        private int x;
+        private int y;
+        private int size;
+        internal object Instance;
+
+        public void Move (int yAmount)
+        {
+
+        }
+
+        public void Draw()
+        {
+
+        }
     }
 }
