@@ -11,16 +11,34 @@ namespace Labb2_ConsolePong
         private int x;
         private int y;
         private int size;
-        internal object Instance;
+
+
+        public Paddle(int x, int y, int size)
+        {
+            this.x = x;
+            this.y = y;
+            this.size = size;
+        }
 
         public void Move (int yAmount)
         {
+            y -= yAmount;
 
+            
+            if (y < 0)
+                y = 0;
+
+            if (y + size > Console.WindowHeight)
+                y = Console.WindowHeight - size;
         }
 
         public void Draw()
         {
-
+            for (int i = 0; i < size; i++)
+            {
+                Console.SetCursorPosition(x, y + i);
+                Console.Write("]");
+            }
         }
     }
 }

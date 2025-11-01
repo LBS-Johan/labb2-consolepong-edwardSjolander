@@ -9,12 +9,14 @@ namespace Labb2_ConsolePong
 {
     internal class Game
     {
-        Paddle Paddle1 = new Paddle();
-        Paddle Paddle2 = new Paddle();
-        Ball Ball_ = new Ball();
+        Paddle Paddle1;
+        Paddle Paddle2;
+        Ball ball;
 
         int width;
         int height;
+
+        
 
         public void StartGame()
         {
@@ -23,34 +25,44 @@ namespace Labb2_ConsolePong
             height = Console.WindowHeight;
             Console.CursorVisible = false;
 
-            Ball.Instantiate ball;
+            ball = new Ball(width / 2, height / 2, 1, 1);
+
+            Paddle1 = new Paddle(2, height / 2, 5);
+            Paddle2 = new Paddle(width-3, height / 2, 5);
         }
 
         public bool Run()
         {
+            Console.Clear();
             Paddle1.Draw();
             Paddle2.Draw();
             //Töm hela skärmen i början av varje uppdatering.
-            Console.Clear();
+            
 
             if (Input.IsPressed(ConsoleKey.UpArrow))
             {
-                Paddle2.Move(5);
+                Paddle2.Move(1);
             }
             if (Input.IsPressed(ConsoleKey.DownArrow))
             {
-                Paddle2.Move(-5);
+                Paddle2.Move(-1);
             }
 
             if (Input.IsPressed(ConsoleKey.W))
             {
-                Paddle1.Move(5);
+                Paddle1.Move(1);
             }
             if (Input.IsPressed(ConsoleKey.S))
             {
-                Paddle1.Move(-5);
+                Paddle1.Move(-1);
             }
-            
+
+            ball.Move();
+            ball.Draw();
+            ball.CheckCollisions(Paddle1, Paddle2, width, height);
+
+            Paddle1.Draw();
+            Paddle2.Draw();
 
 
             //Return true om spelet ska fortsätta
