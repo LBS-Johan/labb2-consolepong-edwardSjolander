@@ -1,4 +1,5 @@
 ﻿namespace Labb2_ConsolePong
+
 {
     internal class Program
     {
@@ -18,6 +19,8 @@
 
                 Thread.Sleep(gameSpeed);
             }
+
+            
         }
     }
 }

@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Labb2_ConsolePong;
 
 namespace Labb2_ConsolePong
 {
-    internal class Paddle
+    public class Paddle
     {
         public int x;
         public int y;
@@ -38,6 +39,7 @@ namespace Labb2_ConsolePong
             {
                 Console.SetCursorPosition(x, y + i);
                 Console.Write("]");
+                
             }
         }
     }
