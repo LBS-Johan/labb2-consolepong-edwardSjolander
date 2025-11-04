@@ -11,7 +11,7 @@ namespace Labb2_ConsolePong
     {
         Paddle Paddle1;
         Paddle Paddle2;
-        Ball ball;
+        public Ball ball;
 
         int width;
         int height;

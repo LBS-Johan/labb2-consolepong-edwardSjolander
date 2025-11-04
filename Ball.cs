@@ -39,7 +39,14 @@
             {
                 yVelocity = yVelocity * -1;
             }
-
+            if (x == p1.x+1 && y <= p1.y + p1.size && y >= p1.size)
+            {
+                xVelocity = xVelocity * -1;
+            }
+            if (x == p2.x-1 && y <= p2.y + p2.size && y >= p2.size)
+            {
+                xVelocity = xVelocity * -1;
+            }
 
         }
     }
